@@ -196,9 +196,7 @@ function mesesDelAño(array) {
   if (q.length < 3) {
     return 'No se encontraron los meses pedidos'
   }
-  else {
-    return q
-  }
+  return q
 }
 
 
@@ -224,16 +222,15 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  q = [numero + 2 ]
-  for (var w = 0; w < 9; w++) {
-    q.push(q[w] + 2)
+  q = []
+  for (var w = 0; w < 10; w++) {
+    numero = numero + 2
+        q.push(numero)
+          if (q[w] === w) {
+              return 'Se interrumpió la ejecución'
+          }
   }
-  for (var e = 0; e < q.length; e++) {
-    if (q[e] + 2 === e) {
-      return 'Se interrumpió la ejecución'
-    }
-  }
-  return q
+    return q
 }
 
 
@@ -244,13 +241,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-  q = [numero + 2 ]
-  for (var w = 0; w < 8; w++) {
-    q.push(q[w] + 2)
+  var array = [];
+  var suma = numero;
+  for(var i= 0; i<10; i++) {
+    if(i === 5) continue;
+    else {
+      suma = suma + 2;
+      array.push(suma);
+    }
   }
-  return q
+  return array;
 }
-
 
 // No modificar nada debajo de esta línea
 // --------------------------------
